@@ -1,0 +1,23 @@
+{
+  "name": "emprestimos",
+  "version": "1.0.0",
+  "description": "Exercicio Mastertech",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiopagoti/emprestimos.git"
+  },
+  "keywords": [
+    "mastertech",
+    "backend"
+  ],
+  "author": "Fabio Pagoti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabiopagoti/emprestimos/issues"
+  },
+  "homepage": "https://github.com/fabiopagoti/emprestimos#readme"
+}
