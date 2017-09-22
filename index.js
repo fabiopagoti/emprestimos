@@ -54,8 +54,8 @@ app.post('/cliente', (req, res) => {
 			return;
 		}
 		res
-			.status(201)
-			.json(oClienteCriado)
+		.status(201)
+		.json(oClienteCriado)
 	})
 
 })
@@ -66,7 +66,9 @@ app.post('/simulacao', (req, res) => {
 		res.sendStatus(400)
 		return
 	}
-	res.sendStatus(200)
+	res.json({
+		"parcela": req.body.valor / req.body.parcelas
+	})
 
 })
 
