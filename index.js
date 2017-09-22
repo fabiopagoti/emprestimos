@@ -66,8 +66,10 @@ app.post('/simulacao', (req, res) => {
 		res.sendStatus(400)
 		return
 	}
+
+	let valorTotalComJuros = req.body.valor * 1.08
 	res.json({
-		"parcela": req.body.valor / req.body.parcelas
+		"parcela": valorTotalComJuros / req.body.parcelas
 	})
 
 })
