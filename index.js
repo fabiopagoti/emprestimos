@@ -40,6 +40,10 @@ app.get('/hello', (req, res) => {
 })
 
 app.post('/cliente', (req, res) => {
+	let oNewCliente = new Cliente(req.body)
+	oNewCliente.save((err, oClienteCriado) => {
+		res.json(oClienteCriado)
+	})
 
 })
 
