@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const passwordHash = require('password-hash');
 
 const app = express();
 
@@ -40,9 +41,19 @@ app.get('/hello', (req, res) => {
 })
 
 app.post('/cliente', (req, res) => {
+
+	req.body.senha = passwordHash.generate(req.body.senha);
 	let oNewCliente = new Cliente(req.body)
+
+
 	oNewCliente.save((err, oClienteCriado) => {
-		res.json(oClienteCriado)
+		if(!oClienteCriado){
+			res.send(err);
+			return;
+		}
+		res
+			.status(201)
+			.json(oClienteCriado)
 	})
 
 })
