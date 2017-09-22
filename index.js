@@ -32,6 +32,8 @@ const ClienteSchema = {
 
 const Cliente = mongoose.model('Cliente', ClienteSchema);
 
+
+
 app.use(bodyParser.json());
 
 app.get('/hello', (req, res) => {
@@ -57,6 +59,18 @@ app.post('/cliente', (req, res) => {
 	})
 
 })
+
+app.post('/simulacao', (req, res) => {
+
+	if(!req.body.valor || !req.body.parcelas){
+		res.sendStatus(400)
+		return
+	}
+	res.sendStatus(200)
+
+})
+
+
 
 app.listen(3000, (err) => {
 	console.log('Is up')
